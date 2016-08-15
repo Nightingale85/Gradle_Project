@@ -1,11 +1,19 @@
+group 'gradle'
+version '1.0-SNAPSHOT'
+
 apply plugin: 'java'
-apply plugin: 'idea'
 apply plugin: 'war'
 
-war {
-    baseName = 'cookies'
-    version =  '0.1.0'
-}
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
+
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile group: 'org.apache.maven.plugins', name: 'maven-compiler-plugin', version: '2.5.1'
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.1.0'
+    compile group: 'ch.qos.logback', name: 'logback-classic', version: '1.1.3'
 }
